@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post } from '@nestjs/common';
-import { ProductModel } from 'src/product/product.model';
+import { ProductModel } from '../product/product.model';
 import { FindTopPageDto } from './dto/find-top-page.dto';
 
 @Controller('top-page')
