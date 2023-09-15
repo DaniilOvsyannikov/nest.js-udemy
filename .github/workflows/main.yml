@@ -12,10 +12,10 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v4
       with:
-        name: ghcr.io/DaniilOvsyannikov/nest.js-udemy
+        name: docker.pkg.github.com/DaniilOvsyannikov/nest.js-udemy
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        registry: ghcr.io
+        registry: docker.pkg.github.com
         tags: "develop,latest"
