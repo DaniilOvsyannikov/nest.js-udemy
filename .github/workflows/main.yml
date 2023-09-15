@@ -7,14 +7,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-      - name: Publish to registy
-        uses: elgohr/Publish-Docker-Github-Action@main
-    with:
-      registry: ghcr.io
-      name: ghcr.io/DaniilOvsyannikov/nest.js-udemy
-      username: ${{ secrets.DOCKER_USERNAME }}
-      password: ${{ secrets.DOCKER_PASSWORD }}
-      tags: "develop,latest"
 
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: ghcr.io/DaniilOvsyannikov/nest.js-udemy
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        registry: ghcr.io
+        tags: "develop,latest"
