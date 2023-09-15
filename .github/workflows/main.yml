@@ -19,3 +19,5 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         registry: docker.pkg.github.com
         tags: "develop,latest"
+        context: top-api
+        dockerfile: top-api/Dockerfile
