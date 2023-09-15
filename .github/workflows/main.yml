@@ -2,18 +2,19 @@ name: Publish Docker
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - name: Publish to registy
-        uses: elgohr/Publish-Docker-Github-Action@master
-        with:
-          registry: docker.pkg.github.com
-          name: github.com/DaniilOvsyannikov/nest.js-udemy.git
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          tags: "develop"
+        uses: elgohr/Publish-Docker-Github-Action@main
+    with:
+      registry: ghcr.io
+      name: ghcr.io/DaniilOvsyannikov/nest.js-udemy
+      username: ${{ secrets.DOCKER_USERNAME }}
+      password: ${{ secrets.DOCKER_PASSWORD }}
+      tags: "develop,latest"
+
