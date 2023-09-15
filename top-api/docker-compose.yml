@@ -1,13 +1,13 @@
 # version: '3'
 # services:
-#   top.api:
-#     image: top-api:latest
-#     container_name: top-api
-#     restart: always
-#     ports:
-#       - 3000:3000
-#     volumes:
-#       - ./.env:/opt/app/.env
+# top.api:
+#   image: top-api:latest
+#   container_name: top-api
+#   restart: always
+#   ports:
+#     - 3000:3000
+#   volumes:
+#     - ./.env:/opt/app/.env
 
 version: '4.22'
 services:
@@ -22,3 +22,11 @@ services:
       - 27017:27017
     volumes:
       - ./mongo-data-4.4:/data/db
+  top.api:
+    image: top-api:latest
+    container_name: top-api
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./.env:/opt/app/.env
